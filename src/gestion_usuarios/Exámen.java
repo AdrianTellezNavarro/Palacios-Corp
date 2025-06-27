@@ -41,13 +41,11 @@ public class Exámen extends javax.swing.JFrame {
 
         jButtonSaltar.setVisible(false);
         
-                // En el constructor o método de inicialización de tu clase:
         jButton0.addActionListener(e -> verificarRespuesta('A'));
         jButton1.addActionListener(e -> verificarRespuesta('B'));
         jButton2.addActionListener(e -> verificarRespuesta('C'));
         jButton3.addActionListener(e -> verificarRespuesta('D'));
 
-        // Botón para saltar pregunta (opcional)
         jButtonSaltar.addActionListener(e -> {
             if (preguntaActual < preguntasExamen.size() - 1) {
                 preguntaActual++;
@@ -282,7 +280,6 @@ public void cargarExamen(String typeex) {
     }
 }
 
-// Método para verificar respuesta
 public void verificarRespuesta(char opcionSeleccionada) {
     if (preguntaActual >= respuestasCorrectas.size()) return;
     
@@ -315,228 +312,6 @@ private void mostrarResultadoFinal() {
 }
    
     
-    
-    
-    
-    
-    
-    
-    private void verifi(int respuesta){
-    
-        boolean esCorrecta = false;
-        int respcorr = 0;
-        
-        switch(typeex) {
-            case "Historia de México":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 5:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;}
-                break;
-            case "Geografia de México":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 5:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;}
-                break;
-            case "Instituciones y gobierno":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break; 
-                    case 5:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;}
-                break;
-            case "Cultura y tradiciones":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 5:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;}
-                break;
-            case "Idioma español":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 5:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;}
-                break;
-            case "Simbolos patrios":
-                switch(numpregunta){ 
-                    case 0:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 1:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 2:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 3:
-                    if (respuesta == 1)respcorr = respcorr+1;
-                    break;
-                    case 4:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 5:
-                    if (respuesta == 2)respcorr = respcorr+1;
-                    break;
-                    case 6:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 7:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 8:
-                    if (respuesta == 3)respcorr = respcorr+1;
-                    break;
-                    case 9:
-                    if (respuesta == 0)respcorr = respcorr+1;
-                    break;}
-                break;}
-        
-        if(respcorr >= 1) {
-            javax.swing.JOptionPane.showMessageDialog(this, "¡Correcto!");
-            respuestascorr++;
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "Incorrecto");
-        }
-        
-        numpregunta++;
-        Labels();
-    
-    }
     
     
     

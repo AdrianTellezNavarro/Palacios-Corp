@@ -321,6 +321,7 @@ private void procesarCaso(String paso) {
         try (PreparedStatement checkStmt = conex.prepareStatement(checkSql)) {
             checkStmt.setInt(1, id);
             boolean existe = checkStmt.executeQuery().next();
+            System.out.println(id);
 
             // Actualizar o insertar
             if (existe) {
@@ -373,7 +374,7 @@ public void dispose() {
 
     
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-    // 1. Verificar y crear conexión si es necesario (común para todos los casos)
+   
     if (conex == null) {
         try {
             conex = DriverManager.getConnection(
@@ -390,41 +391,7 @@ public void dispose() {
 
     String paso = "Realiza el pago de derechos";
 
-    try {
-        String checkSql = "SELECT 1 FROM usuario WHERE ID_Usuario = ? LIMIT 1";
-        try (PreparedStatement checkStmt = conex.prepareStatement(checkSql)) {
-            checkStmt.setInt(1, id);
-            boolean existe = checkStmt.executeQuery().next();
-
-            if (existe) {
-                String updateSql = "UPDATE usuario SET Método_Actual = ?, Paso_Actual= ? WHERE ID_Usuario = ?";
-                try (PreparedStatement updateStmt = conex.prepareStatement(updateSql)) {
-                    updateStmt.setString(1, proceso);
-                    updateStmt.setString(2, paso);
-                    updateStmt.setInt(3, id);
-                    updateStmt.executeUpdate();
-                }
-            } else {
-                String insertSql = "INSERT INTO usuario (Método_Actual, Paso_Actual, ID_Usuario) VALUES (?, ?, ?)";
-                try (PreparedStatement insertStmt = conex.prepareStatement(insertSql)) {
-                    insertStmt.setString(1, proceso);
-                    insertStmt.setString(2, paso);
-                    insertStmt.setInt(3, id);
-                    insertStmt.executeUpdate();
-                }
-            }
-        }
-
-        Pasos obj = new Pasos(paso, proceso, contraseña, nombre, id, conex);
-        obj.setVisible(true);
-        this.setVisible(false);
-
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, 
-            "Error al guardar el progreso: " + ex.getMessage(), 
-            "Error", JOptionPane.ERROR_MESSAGE);
-    }
+    procesarCaso(paso);
 
     
     dispose();
@@ -508,7 +475,8 @@ dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
+        
+        
         ProcesoNaturalizacion obj = new ProcesoNaturalizacion(contraseña , nombre, id, conex);
     
         obj.setVisible(true);

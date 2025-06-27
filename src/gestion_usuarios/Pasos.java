@@ -34,6 +34,7 @@ public class Pasos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.paso = paso;
         this.proceso = proceso;
+        this.id = id;
         
         jButton1.setVisible(false);
         
@@ -311,7 +312,9 @@ private int obtenerIdMetodo(String proceso) {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    Menu obj = new Menu(contraseña , nombre, id, conex);
+        
+        System.out.println(id);
+        Menu obj = new Menu(contraseña , nombre, id, conex);
 
         obj.setVisible(true);
         this.setVisible(false);
