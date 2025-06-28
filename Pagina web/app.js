@@ -157,7 +157,10 @@ app.post('/eliminarUsuario', (req, res) => {
         res.send(`❌ Usuario con ID ${id} eliminado correctamente.`);
     });
 });
+const PORT = 1000;
 
-app.listen(5000,()=>{
-    console.log('Servidor escuchando en el puerto 5000')
-})
+app.listen(PORT, () => {
+
+  console.log(`🚀 Servidor funcionando en http://localhost:${PORT}`);
+
+});
