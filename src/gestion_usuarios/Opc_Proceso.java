@@ -1,11 +1,7 @@
 
 package gestion_usuarios;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.DriverManager;
+import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 

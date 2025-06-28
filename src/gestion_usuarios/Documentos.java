@@ -1,14 +1,13 @@
 package gestion_usuarios;
+
 import java.awt.Desktop;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.swing.filechooser.FileSystemView;
 
 public class Documentos extends javax.swing.JFrame {

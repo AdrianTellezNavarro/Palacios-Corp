@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package gestion_usuarios;
 
-import java.sql.Connection;
+import java.sql.*;
 
-/**
- *
- * @author adrtl
- */
 public class MenuExamen extends javax.swing.JFrame {
 
     private Connection conex;

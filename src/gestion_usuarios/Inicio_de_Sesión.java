@@ -2,14 +2,8 @@
 package gestion_usuarios;
 
 import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.ResultSet;
+import javax.swing.*;
+import java.sql.*;
 
 public class Inicio_de_Sesión extends javax.swing.JFrame {
     private Connection conexion;

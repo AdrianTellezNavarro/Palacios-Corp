@@ -4,17 +4,8 @@
  */
 package gestion_usuarios;
 
-import java.awt.Image;
-import java.sql.Connection;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.DriverManager;
+import java.sql.*;
 import java.util.ArrayList;
 
 

@@ -1,10 +1,8 @@
 package gestion_usuarios;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import java.util.*;
+import javax.swing.*;
 
 public class statsexam extends javax.swing.JFrame {
    private int id;

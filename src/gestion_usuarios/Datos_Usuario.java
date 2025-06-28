@@ -5,14 +5,8 @@
 package gestion_usuarios;
 
 import java.awt.Image;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import java.sql.ResultSet;
+import java.sql.*;
+import javax.swing.*;
 
 
 public class Datos_Usuario extends javax.swing.JFrame {
