@@ -1,0 +1,17 @@
+body{
+    background-image: url('/images/fondo.jpg');
+    background-size:contain;
+    width: 100%;
+    height: auto;
+
+}
+.Log.in{
+    align-items: center;
+    justify-content: center;
+    display: flex;  
+    border: 2px solid rgb(218, 219, 223);
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+}
