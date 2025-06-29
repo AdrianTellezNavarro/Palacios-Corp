@@ -9,11 +9,11 @@ let con=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'n0m3l0',
-    database:'tempsys'
+    database:'bdweb'
 })
 con.connect();
 
-//crud create,read,update, delete
+
 app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({
@@ -24,21 +24,24 @@ app.use(express.static('public'))
 
 
 // Ruta para agregar un usuario
-app.post('/agregarUsuario',(req,res)=>{
-        let nombre=req.body.nombre
-        let id=req.body.id
+app.post('/agregarUsuario', (req, res) => {
+    let usuario = req.body.usuario;
+    let contraseña = req.body.contraseña;
 
-        con.query('INSERT INTO usuario (id_usuario, nombre) VALUES (?, ?)', [id, nombre], (err, respuesta, fields) => {
-            if (err) {
-                console.log("Error al conectar", err);
-                return res.status(500).send("Error al conectar");
-            }
-           
-            return res.send(`<h3>Usuario creado correctamente:</h3> ${nombre}
-                <br><a href="/obtenerUsuario">Ver usuarios</a>`);
-            
-        });
-})
+    if (!usuario || !contraseña) {
+        return res.status(400).send("Faltan datos: usuario o contraseña");
+    }
+
+    con.query('INSERT INTO usuarios (Usuario, Contraseña) VALUES (?, ?)', [usuario, contraseña], (err, respuesta) => {
+        if (err) {
+            console.log("Error al insertar en la base de datos:", err);
+            return res.status(500).send("Error al conectar con la base de datos");
+        }
+        // Redirige al usuario a menu.html en la carpeta public
+       res.send("Usuario agregado correctamente");
+    });
+});
+
 
 //Función para consultar todos los usuarios
 
@@ -114,28 +117,30 @@ app.get('/obtenerUsuario', (req, res) => {
 
 
 app.post('/login', (req, res) => {
-    const { id, nombre } = req.body;
+    const usuario = req.body.usuario;
+    const contraseña = req.body.contraseña;
 
-    if (!id || !nombre) {
-        return res.status(400).send('Faltan datos para iniciar sesión');
+    if (!usuario || !contraseña) {
+        return res.status(400).send("Faltan datos");
     }
 
-    con.query(
-        'SELECT * FROM usuario WHERE id_usuario = ? AND nombre = ?',
-        [id, nombre],
-        (err, resultados) => {
-            if (err) {
-                console.error('Error en login:', err);
-                return res.status(500).send('Error en el servidor');
-            }
-            if (resultados.length === 0) {
-                return res.status(401).send('Usuario o nombre incorrecto');
-            }
-            // Aquí podrías crear una sesión, token, etc.
-            res.send(`Bienvenido, ${resultados[0].nombre}!`);
+    const sql = 'SELECT * FROM usuarios WHERE Usuario = ? AND Contraseña = ?';
+    con.query(sql, [usuario, contraseña], (err, resultados) => {
+        if (err) {
+            console.error("Error al hacer login:", err);
+            return res.status(500).send("Error en el servidor");
         }
-    );
+
+        if (resultados.length > 0) {
+            // Inicio de sesión exitoso
+            res.redirect('/menu.html'); // o puedes usar res.send("Bienvenido")
+        } else {
+            // Usuario o contraseña incorrectos
+            res.status(401).send("Usuario o contraseña incorrectos");
+        }
+    });
 });
+
 
 app.post('/editarUsuario', (req, res) => {
     const id = req.body.id;
