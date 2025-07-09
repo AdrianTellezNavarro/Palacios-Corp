@@ -3,61 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú </title>
+    <title>Menú</title>
     <link rel="stylesheet" href="stylemenu.css">
     <script src="app.js"></script>
 </head>
 <body>
     <div class="sidebar">
         <div class="menu-item">
-            <img src="/images/avatar.png" alt="Icono"> PalaciosCorp
+            <img src="/images/avatar.png" alt="Icono">
+            <a href="palacios_corp.html">PalaciosCorp</a>
         </div>
+        <br><br><br>
         <div class="menu-item">
-            <img src="/images/proceso.png" alt="Icono"> Procesos Naturalización
-            <div class="submenu">
-                <a href="#">Subopción 1</a>
-                <a href="#">Subopción 2</a>
-            </div>
-        </div>
-        <br><br>
-        <div class="menu-item">
-            <img src="/images/flecha-correcta.png" alt="Icono"> Continuar Proceso
-            <div class="submenu">
-                <a href="#">Subopción 1</a>
-                <a href="#">Subopción 2</a>
-            </div>
+            <img src="/images/proceso.png" alt="Icono">
+            <a href="menu.html">Procesos Naturalización</a>
         </div>
         <br><br>
         <div class="menu-item">
-            <img src="/images/examenes.png" alt="Icono"> Exámenes
-            <div class="submenu">
-                <a href="#">Subopción 1</a>
-                <a href="#">Subopción 2</a>
-            </div>
+            <img src="/images/flecha-correcta.png" alt="Icono">
+            <a href="continuar_proceso.html">Continuar Proceso</a>
+        </div>
+        <br>
+
+        <br>
+        <div class="menu-item">
+            <img src="/images/avatar.png" alt="Icono">
+            <a href="perfil.html">Perfil</a>
         </div>
         <br><br>
         <div class="menu-item">
-            <img src="/images/estadisticas.png" alt="Icono"> Estadísticas de Examen
-            <div class="submenu">
-                <a href="#">Subopción 1</a>
-                <a href="#">Subopción 2</a>
-            </div>
-        </div>
-        <br><br>
-        <div class="menu-item">
-            <img src="/images/documentos.png" alt="Icono"> Documentos
-            <div class="submenu">
-                <a href="#">Subopción 1</a>
-                <a href="#">Subopción 2</a>
-            </div>
-        </div>
-        <br><br>
-        <div class="menu-item">
-            <img src="/images/log-out.png" alt="Icono"><a href="index.html">Cerrar Sesión</a> 
+            <img src="/images/log-out.png" alt="Icono">
+            <a href="cerrar_sesion.html">Cerrar Sesión</a>
         </div>
     </div>
     <div class="content">
-        <img src="https://via.placeholder.com/800x600" alt="Imagen de fondo">
+        <h2>Procesos de Naturalización</h2>
+        <div class="grid-container">
+            <a href="#naturalizacion-latino" class="grid-item">Naturalización por Latinoamericano</a>
+            <a href="#nat-padres" class="grid-item">Nat. por Padres Mexicanos</a>
+            <a href="#nat-matrimonio" class="grid-item">Nat. por Matrimonio con Mexicano</a>
+            <a href="#nat-hijos" class="grid-item">Nat. por Hijos Mexicanos</a>
+            <a href="#nat-por-nacimiento" class="grid-item">Nat. por Nacimiento en México</a>
+        </div>
     </div>
 </body>
 </html>

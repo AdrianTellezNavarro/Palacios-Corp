@@ -3,7 +3,9 @@
 const express = require("express")
 const mysql= require("mysql2")
 
+
 let bodyParser=require('body-parser')
+
 let app=express()
 let con=mysql.createConnection({
     host:'localhost',
@@ -38,7 +40,9 @@ app.post('/agregarUsuario', (req, res) => {
             return res.status(500).send("Error al conectar con la base de datos");
         }
         // Redirige al usuario a menu.html en la carpeta public
-       res.send("Usuario agregado correctamente");
+       res.send('/menu.html');
+
+
     });
 });
 
@@ -162,7 +166,20 @@ app.post('/eliminarUsuario', (req, res) => {
         res.send(`❌ Usuario con ID ${id} eliminado correctamente.`);
     });
 });
-const PORT = 1000;
+
+app.post('/resultados', (req, res) => {
+  const { usuarioId, puntaje, respuestas } = req.body;
+
+  const query = 'INSERT INTO resultados (usuario_id, puntaje, respuestas) VALUES (?, ?, ?)';
+  con.query(query, [usuarioId, puntaje, JSON.stringify(respuestas)], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error al guardar resultados');
+    }
+    res.send('Resultados guardados correctamente');
+  });
+});
+const PORT = 2000;
 
 app.listen(PORT, () => {
 
